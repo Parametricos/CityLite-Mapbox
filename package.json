@@ -35,6 +35,7 @@
     "react-dom": "18.2.0",
     "react-dropzone": "^14.2.3",
     "shapefile": "^0.6.6",
+    "styled-components": "^5.3.6",
     "three": "0.135",
     "typescript": "4.8.4"
   },
@@ -42,6 +43,7 @@
     "@types/mapbox-gl": "^2.7.7",
     "@types/react-color": "^3.0.6",
     "@types/shapefile": "^0.6.1",
+    "@types/styled-components": "^5.1.26",
     "@types/three": "^0.136.0"
   },
   "packageManager": "yarn@3.2.4"
