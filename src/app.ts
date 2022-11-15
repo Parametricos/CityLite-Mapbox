@@ -19,8 +19,8 @@ export class App {
   dataSourcesOpen: boolean = false;
 
   private _coordinates: LngLatLike = {
-    lng: -122.498866,
-    lat: 37.797125
+    lng:   -122.4116363927742,
+    lat: 37.80253164862188,
   }
 
   constructor(container: HTMLDivElement) {
