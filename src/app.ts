@@ -78,9 +78,9 @@ export class App {
 
     const htmlLabel = document.createElement('div');
     const htmlIcon = document.createElement('p');
-    htmlIcon.textContent = '🚀';
+    htmlIcon.textContent = '📍';
     htmlLabel.append(htmlIcon);
-    htmlLabel.classList.add('example-label');
+    htmlLabel.classList.add('pin-label');
 
     const label = new CSS2DObject(htmlLabel);
     label.position.y = 10;

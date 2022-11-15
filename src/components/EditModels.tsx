@@ -20,7 +20,6 @@ const EditModels : FunctionComponent<EditModelsProps> = (props) => {
     }
   }, [app, lat, lng]);
 
-
   const handleChange = (event: any) => {
     app?.loadIfcFromFile(event.target.files[0]);
   }
@@ -28,12 +27,28 @@ const EditModels : FunctionComponent<EditModelsProps> = (props) => {
     return (
         <Stack spacing={2}>
           <input type='file' onChange={handleChange} />
-          <TextField label='lat' type='number' value={lat} onChange={(event) => {
-            setLat(Number(event.target.value))
-          }}></TextField>
-          <TextField label='lng' type='number' value={lng} onChange={(event) => {
-            setLng(Number(event.target.value))
-          }}></TextField>
+          <TextField
+            label='Latitude'
+            type='number'
+            value={lat}
+            inputProps={{
+              step: 0.00001
+            }}
+            onChange={(event) => {
+              setLat(Number(event.target.value))
+            }}
+          />
+          <TextField
+            label='Longitude'
+            type='number'
+            value={lng}
+            inputProps={{
+              step: 0.00001
+            }}
+            onChange={(event) => {
+              setLng(Number(event.target.value))
+            }}
+          />
         </Stack>
     )
 }

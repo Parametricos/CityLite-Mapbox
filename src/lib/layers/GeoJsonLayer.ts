@@ -15,7 +15,11 @@ export interface GeoJsonLayerOptions {
 
     point: boolean,
     point_color: Color,
-    point_opacity: number
+    point_opacity: number,
+
+    line: boolean
+    line_color: Color,
+    line_opacity: number
 }
 
 export default class GeoJsonLayer {
@@ -65,6 +69,8 @@ export default class GeoJsonLayer {
     set stroke_width(width: number){
         this.options.stroke_width = width;
         this.mapView.setPaintProperty(`${this.id}-stroke`, `line-width`, this.options.stroke_width);
+        this.mapView.setPaintProperty(`${this.id}-line`, `line-width`, this.options.stroke_width);
+
     }
 
     set stroke_color(color: Color){
@@ -72,6 +78,9 @@ export default class GeoJsonLayer {
         this.options.stroke_opacity = color.A;
         this.mapView.setPaintProperty(`${this.id}-stroke`, `line-color`, this.options.stroke_color.hex);
         this.mapView.setPaintProperty(`${this.id}-stroke`, `line-opacity`, this.options.stroke_opacity);
+
+        this.mapView.setPaintProperty(`${this.id}-line`, `line-color`, this.options.stroke_color.hex);
+        this.mapView.setPaintProperty(`${this.id}-line`, `line-opacity`, this.options.stroke_opacity);
     }
 
     get stroke_color(){
@@ -82,9 +91,17 @@ export default class GeoJsonLayer {
         this.options.stroke = enabled;
         if (!enabled) {
             this.mapView.setLayoutProperty(`${this.id}-line`, 'visibility', 'none');
+            this.mapView.setLayoutProperty(`${this.id}-stroke`, 'visibility', 'none');
+
         } else {
             this.mapView.setLayoutProperty(
               `${this.id}-line`,
+              'visibility',
+              'visible'
+            );
+
+            this.mapView.setLayoutProperty(
+              `${this.id}-stroke`,
               'visibility',
               'visible'
             );
@@ -147,6 +164,17 @@ export default class GeoJsonLayer {
         this.options.point_opacity = color.A;
         this.mapView.setPaintProperty(`${this.id}-circle`, `circle-color`, this.options.point_color.hex);
         this.mapView.setPaintProperty(`${this.id}-circle`, `circle-opacity`, this.options.point_opacity);
+    }
+
+    set line_color(color: Color){
+        this.options.line_color = color;
+        this.options.line_opacity = color.A;
+        this.mapView.setPaintProperty(`${this.id}-line`, `line-color`, this.options.line_color.hex);
+        this.mapView.setPaintProperty(`${this.id}-line`, `line-opacity`, this.options.line_opacity);
+    }
+
+    get line_color(){
+        return this.options.line_color;
     }
 
     get point_color(){
@@ -212,8 +240,8 @@ export default class GeoJsonLayer {
                 'type': 'line',
                 'source': this.datasource.id,
                 'paint': {
-                    'line-color': 'red',
-                    'line-width': 14,
+                    'line-color': this.options.stroke_color.hex,
+                    'line-width': this.options.stroke_width,
                 },
                 'filter': ['==', '$type', 'LineString']
             }

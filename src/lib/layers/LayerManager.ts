@@ -11,6 +11,24 @@ const resource_github_url = "https://raw.githubusercontent.com/Parametricos/city
 
 const DemoData = [
     {
+        name: "SF - Green Connections Network",
+        description: "Green Connections aims to increase access to parks, open spaces, and the waterfront by envisioning a network of green connectors -- city streets that will be upgraded incrementally over the next 20 years to make it safer and more pleasant to travel to parks by walking, biking, and other forms of active transportation. The dataset is a zipped GIS shapefile of the Green Connections Network which is shown in this map: http://www.sf-planning.org/ftp/files/Citywide/green_connections/GC_Final_Network_Map_03-2014.pdf. Further information can be found on the Green Connections website: http://greenconnections.sfplanning.org\n",
+        id: "sf_green_connections_network",
+        type: "geojson",
+        country: "USA",
+        updated: "Sep 6, 2019",
+        url: `/layers/san_francisco/green_connections_network.geojson`
+    },
+    {
+        name: "SF - Suspected Soil/Groundwater contamination",
+        description: "Development projects that are located on sites with known or suspected soil and/or groundwater contamination are subject to the provisions of Health Code Article 22A, which is administered by the Department of Public Health (DPH). ",
+        id: "maher_1",
+        type: "geojson",
+        country: "USA",
+        updated: "Nov 14, 2022",
+        url: `/layers/san_francisco/Maher.geojson`
+    },
+    {
         name: "USA - San Francisco - Neighborhood Boundaries",
         id: "san_francisco_neighborhoods",
         type: "geojson",
