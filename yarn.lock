@@ -874,10 +874,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/three@npm:0.135.0":
-  version: 0.135.0
-  resolution: "@types/three@npm:0.135.0"
-  checksum: 85977e55cc3d7a14be88816a50bcec4eb0f141876d3cdc6dd7870f72122605af87462d7583e950cd0ee6ab21949b8c1b8304a88174d536648deb8ef97968fa1b
+"@types/three@npm:^0.136.0":
+  version: 0.136.1
+  resolution: "@types/three@npm:0.136.1"
+  checksum: 2d0792f8bb49f4af1e8486c6be7d0f07f443584ae6d7faec299c6023c375ec13492f15563385db4dd1b13f8c162724eb126d0329d64ca0c51f2876ada14b4c53
   languageName: node
   linkType: hard
 
@@ -1222,7 +1222,7 @@ __metadata:
     "@types/react-color": ^3.0.6
     "@types/react-dom": 18.0.9
     "@types/shapefile": ^0.6.1
-    "@types/three": 0.135.0
+    "@types/three": ^0.136.0
     eslint: 8.27.0
     eslint-config-next: 13.0.3
     localforage: ^1.10.0
@@ -1231,7 +1231,7 @@ __metadata:
     mobx-react-lite: ^3.4.0
     next: 13.0.3
     next-transpile-modules: ^10.0.0
-    openbim-components: ^0.0.11
+    openbim-components: 0.0.12-beta
     react: 18.2.0
     react-color: ^2.19.3
     react-dom: 18.2.0
@@ -2904,9 +2904,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"openbim-components@portal:/Users/harry/Documents/Projects/ifc.js/components/library::locator=citylite2%40workspace%3A.":
-  version: 0.0.0-use.local
-  resolution: "openbim-components@portal:/Users/harry/Documents/Projects/ifc.js/components/library::locator=citylite2%40workspace%3A."
+"openbim-components@npm:0.0.12-beta":
+  version: 0.0.12-beta
+  resolution: "openbim-components@npm:0.0.12-beta"
   dependencies:
     bim-fragment: 0.0.11
     camera-controls: ^1.36.0
@@ -2914,8 +2914,9 @@ __metadata:
     three: 0.135
     three-mesh-bvh: ^0.5.15
     web-ifc: ^0.0.36
+  checksum: e3be103fcb0f247d07e67717bda82832625f7c6748de0de30b26924d06de4ddcdd766aec0db06423d745c008ffc6c765397ef27ae0a0335b055c6e0718e83492
   languageName: node
-  linkType: soft
+  linkType: hard
 
 "optionator@npm:^0.9.1":
   version: 0.9.1

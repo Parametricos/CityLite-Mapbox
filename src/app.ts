@@ -7,7 +7,6 @@ import {MapboxAdvancedRenderer} from "./mapbox-advanced-renderer";
 import {makeAutoObservable} from "mobx";
 import LayerManager from "./lib/layers/LayerManager";
 
-
 export class App {
 
   map: mapboxgl.Map;
