@@ -24,3 +24,7 @@ a {
     background: black;
   }
 }
+
+.pin-label {
+  font-size: 24px;
+}

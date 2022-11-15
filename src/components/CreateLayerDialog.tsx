@@ -51,6 +51,10 @@ const CreateLayerDialog : FunctionComponent<CreateLayerDialogProps & DialogProps
             fill_opacity: 0.8,
             fill_color: colorB,
 
+            line_color: colorA,
+            line_opacity: 0.8,
+            line: true,
+
             point: true,
             point_color: colorC,
             point_opacity: 0.8,

@@ -1,5 +1,5 @@
 import React, {FunctionComponent, useEffect, useState} from 'react'
-import {Stack, TextField} from "@mui/material";
+import {Box, Button, Stack, TextField} from "@mui/material";
 import {App} from "../app";
 
 interface EditModelsProps {
@@ -13,6 +13,8 @@ const EditModels : FunctionComponent<EditModelsProps> = (props) => {
   const [lat, setLat] = useState((app.coordinates as any).lat);
   const [lng, setLng] = useState((app.coordinates as any).lng);
 
+  const [sampleLoaded, setSampleLoaded] = useState(false);
+
   useEffect(() => {
     app.coordinates = {
       lat,
@@ -24,8 +26,15 @@ const EditModels : FunctionComponent<EditModelsProps> = (props) => {
     app?.loadIfcFromFile(event.target.files[0]);
   }
 
+  const handleLoadSample = () => {
+    setSampleLoaded(true)
+    app?.loadIfc(new URL('/models/House Project.ifc'));
+  }
+
     return (
+      <Box p={2}>
         <Stack spacing={2}>
+
           <input type='file' onChange={handleChange} />
           <TextField
             label='Latitude'
@@ -49,7 +58,10 @@ const EditModels : FunctionComponent<EditModelsProps> = (props) => {
               setLng(Number(event.target.value))
             }}
           />
+          {/*<Button disabled={sampleLoaded} onClick={handleLoadSample}>Load sample building</Button>*/}
         </Stack>
+      </Box>
+
     )
 }
 

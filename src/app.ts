@@ -83,7 +83,7 @@ export class App {
     htmlLabel.classList.add('pin-label');
 
     const label = new CSS2DObject(htmlLabel);
-    label.position.y = 10;
+    label.position.y = 2;
     scene.add(label);
 
     this.layer_manager = new LayerManager(this)
@@ -112,17 +112,16 @@ export class App {
 
   async loadIfc(url: URL){
     if(!this.fragments) return;
+    this.fragments.ifcLoader.settings.webIfc.COORDINATE_TO_ORIGIN = false;
     const group = await this.fragments.ifcLoader.load(url)
+    this.components.scene.get().add(group)
   }
 
   async loadIfcFromFile(file: File){
 
     const reader = new FileReader();
     reader.onloadend = async () => {
-      if(!this.fragments) return;
-      this.fragments.ifcLoader.settings.webIfc.COORDINATE_TO_ORIGIN = false;
-      const group = await this.fragments.ifcLoader.load(new URL(reader.result as string))
-      this.components.scene.get().add(group)
+      await this.loadIfc(new URL(reader.result as string))
     };
     reader.readAsDataURL(file);
   }
